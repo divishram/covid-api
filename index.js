@@ -67,9 +67,7 @@ app.post("/", urlEncodedParser, (req, res) => {
     }, 6000);
 });
 
-app.listen(port, () => {
-    console.log(`listening on http://localhost:${port}`);
-});
+app..listen(process.env.PORT || 5000);
 
 function displayCovidNumbers(countryToSearch) {
     axios.get(`https://disease.sh/v3/covid-19/countries/${countryToSearch}?strict=true`)
