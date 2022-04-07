@@ -1,0 +1,260 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  title API Project 
+  link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css')
+  
+nav.navbar(role='navigation', aria-label='main navigation')
+  .navbar-brand
+    a.navbar-item(href='https://bulma.io')
+      p.has-text-primary.has-background-light Covid Country API
+    a.navbar-burger(role='button', aria-label='menu', aria-expanded='false', data-target='navbarBasicExample')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+      span(aria-hidden='true')
+  #navbarBasicExample.navbar-menu
+    .navbar-start
+      a.navbar-item Home
+      a.navbar-item Documentation
+      .navbar-item.has-dropdown.is-hoverable
+        a.navbar-link Covid-19 Resources
+        .navbar-dropdown
+          a.navbar-item(href='https://www.cdc.gov/coronavirus/2019-ncov/index.html') CDC
+          a.navbar-item(href='https://www.who.int/emergencies/diseases/novel-coronavirus-2019') WHO
+          a.navbar-item(href='https://www.camh.ca/en/health-info/mental-health-and-covid-19') CAMH
+          a.navbar-item(href='https://www.mcgill.ca/library/covid-19-open-resources') McGill Library
+    .navbar-end
+
+p.title.is-2 Welcome to the Covid Country API!
+p.subtitle.is-4
+  | This API gathers data about Covid-19 across different
+  | countries and shows some other facts other the selected
+  | country. Please select a country from the dropdown menu.
+form(action='/', method='POST')
+  .field.has-addons
+  .control.is-expanded
+    .select
+      select(name='country')
+        option(value="Afghanistan") Afghanistan
+        option(value="Albania") Albania
+        option(value="Algeria") Algeria
+        option(value="Angola") Angola
+        option(value="Anguilla") Anguilla
+        option(value="Antarctica") Antarctica
+        option(value="Argentina") Argentina
+        option(value="Armenia") Armenia
+        option(value="Aruba") Aruba
+        option(value="Australia") Australia
+        option(value="Austria") Austria
+        option(value="Azerbaijan") Azerbaijan
+        option(value="Bahamas  ") Bahamas  
+        option(value="Bahrain") Bahrain
+        option(value="Bangladesh") Bangladesh
+        option(value="Barbados") Barbados
+        option(value="Belarus") Belarus
+        option(value="Belgium") Belgium
+        option(value="Belize") Belize
+        option(value="Benin") Benin
+        option(value="Bermuda") Bermuda
+        option(value="Bhutan") Bhutan
+        option(value="Bolivia") Bolivia
+        option(value="Bosnia and Herzegovina") Bosnia and Herzegovina
+        option(value="Botswana") Botswana
+        option(value="Brazil") Brazil
+        option(value="British Indian Ocean Territory") British Indian Ocean Territory  
+        option(value="Brunei Darussalam") Brunei Darussalam
+        option(value="Bulgaria") Bulgaria
+        option(value="Burkina Faso") Burkina Faso
+        option(value="Burundi") Burundi
+        option(value="Cabo Verde") Cabo Verde
+        option(value="Cambodia") Cambodia
+        option(value="Cameroon") Cameroon
+        option(value="Canada") Canada
+        option(value="Cayman Islands") Cayman Islands
+        option(value="Central African Republic") Central African Republic
+        option(value="Chad") Chad
+        option(value="Chile") Chile
+        option(value="China") China
+        option(value="Christmas Island") Christmas Island
+        option(value="Colombia") Colombia
+        option(value="Comoros") Comoros   
+        option(value="Congo") Congo
+        option(value="Congo") Congo
+        option(value="Cook Islands") Cook Islands
+        option(value="Costa Rica") Costa Rica
+        option(value="Croatia") Croatia
+        option(value="Cuba") Cuba
+        option(value="Cyprus") Cyprus
+        option(value="Czechia") Czechia
+        option(value="Denmark") Denmark
+        option(value="Dominica") Dominica
+        option(value="Dominican Republic") Dominican Republic
+        option(value="Ecuador") Ecuador
+        option(value="Egypt") Egypt
+        option(value="El Salvador") El Salvador
+        option(value="Equatorial Guinea") Equatorial Guinea
+        option(value="Eritrea") Eritrea
+        option(value="Estonia") Estonia
+        option(value="Eswatini") Eswatini
+        option(value="Ethiopia") Ethiopia
+        option(value="Faroe Islands") Faroe Islands   
+        option(value="Fiji") Fiji
+        option(value="Finland") Finland
+        option(value="France") France
+        option(value="French Guiana") French Guiana
+        option(value="French Polynesia") French Polynesia
+        option(value="Gabon") Gabon
+        option(value="Georgia") Georgia
+        option(value="Germany") Germany
+        option(value="Ghana") Ghana
+        option(value="Gibraltar") Gibraltar
+        option(value="Greece") Greece
+        option(value="Greenland") Greenland
+        option(value="Grenada") Grenada
+        option(value="Guadeloupe") Guadeloupe
+        option(value="Guam") Guam
+        option(value="Guatemala") Guatemala
+        option(value="Guernsey") Guernsey
+        option(value="Guinea") Guinea
+        option(value="Guinea-Bissau") Guinea-Bissau
+        option(value="Guyana") Guyana
+        option(value="Haiti") Haiti
+        option(value="Honduras") Honduras
+        option(value="Hong Kong") Hong Kong
+        option(value="Hungary") Hungary
+        option(value="Iceland") Iceland
+        option(value="India") India
+        option(value="Indonesia") Indonesia
+        option(value="Iran") Iran
+        option(value="Iraq") Iraq
+        option(value="Ireland") Ireland
+        option(value="Isle of Man") Isle of Man
+        option(value="Israel") Israel
+        option(value="Italy") Italy
+        option(value="Jamaica") Jamaica
+        option(value="Japan") Japan
+        option(value="Jersey") Jersey
+        option(value="Jordan") Jordan
+        option(value="Kazakhstan") Kazakhstan
+        option(value="Kenya") Kenya
+        option(value="Kiribati") Kiribati
+        option(value="Kuwait") Kuwait
+        option(value="Kyrgyzstan") Kyrgyzstan
+        option(value="Latvia") Latvia
+        option(value="Lebanon") Lebanon
+        option(value="Lesotho") Lesotho
+        option(value="Liberia") Liberia
+        option(value="Libya") Libya
+        option(value="Liechtenstein") Liechtenstein
+        option(value="Lithuania") Lithuania
+        option(value="Luxembourg") Luxembourg
+        option(value="Macao") Macao
+        option(value="Madagascar") Madagascar
+        option(value="Malawi") Malawi
+        option(value="Malaysia") Malaysia
+        option(value="Maldives") Maldives
+        option(value="Mali") Mali
+        option(value="Malta") Malta
+        option(value="Marshall Islands") Marshall Islands   
+        option(value="Martinique") Martinique
+        option(value="Mauritania") Mauritania
+        option(value="Mauritius") Mauritius
+        option(value="Mayotte") Mayotte
+        option(value="Mexico") Mexico
+        option(value="Micronesia") Micronesia
+        option(value="Moldova") Moldova
+        option(value="Monaco") Monaco
+        option(value="Mongolia") Mongolia
+        option(value="Montenegro") Montenegro
+        option(value="Montserrat") Montserrat
+        option(value="Morocco") Morocco
+        option(value="Mozambique") Mozambique
+        option(value="Myanmar") Myanmar
+        option(value="Namibia") Namibia
+        option(value="Nauru") Nauru
+        option(value="Nepal") Nepal
+        option(value="Netherlands") Netherlands
+        option(value="New Caledonia") New Caledonia
+        option(value="New Zealand") New Zealand
+        option(value="Nicaragua") Nicaragua
+        option(value="Niger") Niger
+        option(value="Nigeria") Nigeria
+        option(value="Niue") Niue
+        option(value="Norfolk Island") Norfolk Island
+        option(value="Northern Mariana Islands") Northern Mariana Islands
+        option(value="Norway") Norway
+        option(value="Oman") Oman
+        option(value="Pakistan") Pakistan
+        option(value="Palau") Palau
+        option(value="Panama") Panama
+        option(value="Papua New Guinea") Papua New Guinea
+        option(value="Paraguay") Paraguay
+        option(value="Peru") Peru
+        option(value="Philippines") Philippines
+        option(value="Pitcairn") Pitcairn
+        option(value="Poland") Poland
+        option(value="Portugal") Portugal
+        option(value="Puerto Rico") Puerto Rico
+        option(value="Qatar") Qatar
+        option(value="Republic of North Macedonia") Republic of North Macedonia
+        option(value="Romania") Romania
+        option(value="Russian") Russia
+        option(value="Rwanda") Rwanda
+        option(value="Réunion") Réunion
+        option(value="Saint Lucia") Saint Lucia
+        option(value="Samoa") Samoa
+        option(value="San Marino") San Marino
+        option(value="Saudi Arabia") Saudi Arabia
+        option(value="Senegal") Senegal
+        option(value="Serbia") Serbia
+        option(value="Seychelles") Seychelles
+        option(value="Sierra Leone") Sierra Leone
+        option(value="Singapore") Singapore
+        option(value="Slovakia") Slovakia
+        option(value="Slovenia") Slovenia
+        option(value="Solomon Islands") Solomon Islands
+        option(value="Somalia") Somalia
+        option(value="South Africa") South Africa
+        option(value="South Sudan") South Sudan
+        option(value="Spain") Spain
+        option(value="Sri Lanka") Sri Lanka
+        option(value="Sudan") Sudan
+        option(value="Suriname") Suriname
+        option(value="Sweden") Sweden
+        option(value="Switzerland") Switzerland
+        option(value="Syria") Syria
+        option(value="Taiwan") Taiwan
+        option(value="Tajikistan") Tajikistan
+        option(value="Tanzania") Tanzania
+        option(value="Thailand") Thailand
+        option(value="Timor-Leste") Timor-Leste
+        option(value="Togo") Togo
+        option(value="Tokelau") Tokelau
+        option(value="Tonga") Tonga
+        option(value="Trinidad and Tobago") Trinidad and Tobago
+        option(value="Tunisia") Tunisia
+        option(value="Turkey") Turkey
+        option(value="Turkmenistan") Turkmenistan
+        option(value="Turks and Caicos Islands") Turks and Caicos Islands   
+        option(value="Tuvalu") Tuvalu
+        option(value="Uganda") Uganda
+        option(value="Ukraine") Ukraine
+        option(value="United Arab Emirates") United Arab Emirates   
+        option(value="United States of America") United States of America
+        option(value="Uruguay") Uruguay
+        option(value="Uzbekistan") Uzbekistan
+        option(value="Vanuatu") Vanuatu
+        option(value="VietNam") VietNam
+        option(value="Virgin Islands (British)") Virgin Islands (British)
+        option(value="Virgin Islands (U.S.)") Virgin Islands (U.S.)
+        option(value="Yemen") Yemen
+        option(value="Zambia") Zambia
+        option(value="Zimbabwe") Zimbabwe
+
+
+  .control
+    button.button.is-primary(type='submit') Choose
+
+main#main
+block content

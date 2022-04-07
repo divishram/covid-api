@@ -1,0 +1,59 @@
+extends index.pug
+
+block content
+
+  //- 2 Columns to display country flag and country coat of arms
+  .columns
+  .column
+    .columns.is-mobile
+      .column.has-background-warning
+        figure.image.is-128x128
+          img(src=countryFlagSvg)
+        p.has-text-centered Country Flag
+      .column.has-background-link
+        figure.image.is-128x128
+          img(src=coatOfArms)
+        p.has-text-centered Country Coat of Arms
+  
+  //- Table to display API information
+  .content
+    table.table
+      tr
+        th Total Cases
+        td #{totalCases}
+      tr
+        th Deaths
+        td #{deaths}
+      tr
+        th Critical Cases
+        td #{criticalCases}
+      tr
+        th Country Population
+        td #{population}
+      tr
+        th Capial City
+        td #{capitalCity}
+      tr
+        th Region
+        td #{region}
+      tr
+        th Income Level
+        td #{incomeLevel}
+
+  //- 2 columns to display links to Google maps or OpenStreet Maps
+  .columns
+  .column.has-background-light
+    a(href=googleMapsUrl) See the Country using Google Maps
+  .column.has-background-warning
+    a(href=openMapsUrl) See the Country using OpenMaps
+    
+
+  
+  //----- Footer --------- // 
+  footer.footer
+    .content.has-text-centered
+      p
+        strong Bulma
+        |  by 
+        a(href='') Divish Ram
+        | . This site is for HTTP 5211
