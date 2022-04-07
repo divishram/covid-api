@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const res = require("express/lib/response");
 var urlEncodedParser = bodyParser.urlencoded({extended: false});
 
+const PORT = process.env.PORT || '8080';
+
 //JSON variable elements
 //covid display numbers
 var totalCases, deaths, criticalCases;
@@ -17,7 +19,8 @@ var countryFlagSvg, coatOfArms, population, googleMapsUrl, openMapsUrl;
 var capitalCity, region, incomeLevel;
 
 const app = express();
-const port = 8888;
+
+app.set('port', PORT);
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
