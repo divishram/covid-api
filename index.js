@@ -103,11 +103,7 @@ function displayCountryInfo(countryToSearch) {
         .catch(function (error) {
             console.log(error);
         })
-        //three calls in one . render in function too.
-        //use async
-        //u can do without nesting, but 3 functions would have to have 1 function all 3. async function
-        //use await
-        //maybe show map
+  
 }
 
 function openData(countryToSearch) {
